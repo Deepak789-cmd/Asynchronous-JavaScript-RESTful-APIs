@@ -1,0 +1,502 @@
+/* ==========================================
+   responsive.css — Responsive & Mobile Styles
+   Weather Dashboard — Breakpoint Definitions
+   ========================================== */
+
+/* ==================== TABLET (max-width: 1024px) ==================== */
+@media (max-width: 1024px) {
+  .header-content {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .search-wrapper {
+    order: 3;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .daily-item {
+    grid-template-columns: 60px 100px 36px 1fr 50px 40px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wind-compass {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .wind-info {
+    width: 100%;
+  }
+
+  .aqi-components {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==================== SMALL TABLET (max-width: 768px) ==================== */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logo i {
+    font-size: 1.4rem;
+  }
+
+  .current-weather-card {
+    padding: 24px;
+  }
+
+  .current-weather-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .current-temp-display {
+    align-self: flex-end;
+  }
+
+  .temp-number {
+    font-size: 3.5rem;
+  }
+
+  .current-weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .current-weather-bottom {
+    gap: 12px;
+  }
+
+  .current-detail {
+    min-width: 70px;
+  }
+
+  .current-detail span {
+    font-size: 0.7rem;
+  }
+
+  .current-detail strong {
+    font-size: 0.85rem;
+  }
+
+  .daily-item {
+    grid-template-columns: 50px 1fr 36px auto;
+    gap: 8px;
+  }
+
+  .daily-date,
+  .daily-rain,
+  .daily-humidity {
+    display: none;
+  }
+
+  .daily-temp-range {
+    gap: 4px;
+  }
+
+  .temp-range-bar {
+    min-width: 40px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .metric-card {
+    padding: 16px;
+  }
+
+  .metric-value {
+    font-size: 1.3rem;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .aqi-components {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hourly-item {
+    padding: 10px 12px;
+    min-width: 80px;
+  }
+
+  .welcome-screen h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-screen p {
+    font-size: 1rem;
+  }
+
+  .welcome-icon {
+    font-size: 4rem;
+  }
+
+  .welcome-features {
+    gap: 20px;
+  }
+}
+
+/* ==================== MOBILE (max-width: 480px) ==================== */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 12px;
+  }
+
+  .header-content {
+    gap: 8px;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .logo i {
+    font-size: 1.6rem;
+  }
+
+  .search-container {
+    padding: 2px;
+  }
+
+  .search-container input {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .search-container button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .search-btn span {
+    display: none;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .current-weather-card {
+    padding: 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .current-weather-card::before,
+  .current-weather-card::after {
+    display: none;
+  }
+
+  .current-location h2 {
+    font-size: 1.2rem;
+  }
+
+  .weather-description {
+    font-size: 0.95rem;
+  }
+
+  .temp-number {
+    font-size: 3rem;
+  }
+
+  .temp-unit {
+    font-size: 1.2rem;
+  }
+
+  .current-weather-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .current-weather-bottom {
+    gap: 8px;
+    justify-content: space-around;
+  }
+
+  .current-detail {
+    min-width: 60px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .metric-card {
+    padding: 14px;
+  }
+
+  .metric-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .metric-label {
+    font-size: 0.7rem;
+  }
+
+  .metric-value {
+    font-size: 1.1rem;
+  }
+
+  .forecast-card {
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .hourly-scroll {
+    gap: 6px;
+  }
+
+  .hourly-item {
+    padding: 8px 10px;
+    min-width: 70px;
+  }
+
+  .hourly-time {
+    font-size: 0.7rem;
+  }
+
+  .hourly-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hourly-temp {
+    font-size: 0.85rem;
+  }
+
+  .daily-item {
+    grid-template-columns: 45px 1fr 30px auto;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .daily-day {
+    font-size: 0.8rem;
+  }
+
+  .daily-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .daily-high,
+  .daily-low {
+    font-size: 0.8rem;
+    width: 30px;
+  }
+
+  .detail-card {
+    padding: 16px;
+  }
+
+  .compass {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .info-item {
+    padding: 10px 6px;
+  }
+
+  .info-item i {
+    font-size: 1rem;
+  }
+
+  .info-item span {
+    font-size: 0.7rem;
+  }
+
+  .info-item strong {
+    font-size: 0.75rem;
+  }
+
+  .aqi-components {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .welcome-icon {
+    font-size: 3rem;
+  }
+
+  .welcome-screen h2 {
+    font-size: 1.3rem;
+  }
+
+  .welcome-screen p {
+    font-size: 0.9rem;
+  }
+
+  .welcome-features {
+    gap: 16px;
+  }
+
+  .welcome-feature i {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .welcome-feature span {
+    font-size: 0.75rem;
+  }
+
+  .footer {
+    padding: 16px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ==================== VERY SMALL SCREENS (max-width: 360px) ==================== */
+@media (max-width: 360px) {
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .temp-number {
+    font-size: 2.5rem;
+  }
+
+  .current-weather-card {
+    padding: 16px;
+  }
+
+  .current-weather-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .aqi-components {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== LANDSCAPE MOBILE ==================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .welcome-screen {
+    min-height: 40vh;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .welcome-icon {
+    font-size: 2.5rem;
+  }
+
+  .welcome-screen h2 {
+    font-size: 1.2rem;
+  }
+
+  .welcome-features {
+    gap: 16px;
+    margin-top: 8px;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .header {
+    position: relative;
+  }
+
+  .search-wrapper,
+  .header-actions,
+  .loading-overlay,
+  .error-container,
+  .search-suggestions {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .current-weather-card {
+    color: black;
+    background: #f0f0f0 !important;
+    box-shadow: none;
+  }
+
+  .metric-card,
+  .forecast-card,
+  .detail-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}
+
+/* ==================== ACCESSIBILITY — REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .welcome-icon {
+    animation: none;
+  }
+}
+
+/* ==================== HIGH CONTRAST ==================== */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000;
+    --text-secondary: #333;
+    --text-muted: #555;
+  }
+
+  .metric-card,
+  .forecast-card,
+  .detail-card {
+    border-width: 2px;
+  }
+}
