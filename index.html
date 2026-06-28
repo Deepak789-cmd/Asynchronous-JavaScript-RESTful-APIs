@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Real-time Weather Dashboard — View live weather metrics including temperature, humidity, and wind speed for any city." />
+  <meta name="author" content="Weather Dashboard" />
+  <title>Weather Dashboard — Real-Time Weather Data</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <i class="fas fa-cloud-sun"></i>
+        <span>WeatherDash</span>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-wrapper">
+        <div class="search-container">
+          <button class="location-btn" id="location-btn" title="Use my location" aria-label="Use my location">
+            <i class="fas fa-crosshairs"></i>
+          </button>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search city... (e.g., London, Tokyo, New York)"
+            autocomplete="off"
+            aria-label="Search for a city"
+          />
+          <button class="search-btn" id="search-btn" aria-label="Search">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+          </button>
+        </div>
+        <!-- Search Suggestions Dropdown -->
+        <div class="search-suggestions hidden" id="search-suggestions"></div>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button class="unit-toggle" id="unit-toggle" title="Toggle temperature unit" aria-label="Toggle temperature unit">
+          °C
+        </button>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== ERROR CONTAINER ==================== -->
+  <div class="error-container hidden" id="error-container">
+    <div class="error-content">
+      <i class="fas fa-exclamation-circle"></i>
+      <span id="error-message">An error occurred.</span>
+      <button class="error-close" id="error-close" aria-label="Close error message">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== LOADING OVERLAY ==================== -->
+  <div class="loading-overlay hidden" id="loading-overlay">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Fetching weather data...</p>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="main-content">
+
+    <!-- Welcome Screen (shown before first search) -->
+    <div id="welcome-screen" class="welcome-screen">
+      <div class="welcome-icon">🌤️</div>
+      <h2>Welcome to WeatherDash</h2>
+      <p>Search for any city to get real-time weather data including temperature, humidity, wind speed, and more.</p>
+      <div class="welcome-features">
+        <div class="welcome-feature">
+          <i class="fas fa-thermometer-half"></i>
+          <span>Temperature</span>
+        </div>
+        <div class="welcome-feature">
+          <i class="fas fa-tint"></i>
+          <span>Humidity</span>
+        </div>
+        <div class="welcome-feature">
+          <i class="fas fa-wind"></i>
+          <span>Wind Speed</span>
+        </div>
+        <div class="welcome-feature">
+          <i class="fas fa-calendar-alt"></i>
+          <span>5-Day Forecast</span>
+        </div>
+        <div class="welcome-feature">
+          <i class="fas fa-lungs"></i>
+          <span>Air Quality</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Content (shown after data loads) -->
+    <div id="dashboard-content" class="dashboard-grid hidden">
+
+      <!-- Current Weather -->
+      <section id="current-weather" aria-label="Current Weather"></section>
+
+      <!-- Metric Cards -->
+      <section id="metrics-cards" class="metrics-grid" aria-label="Weather Metrics"></section>
+
+      <!-- Hourly Forecast -->
+      <section id="hourly-forecast" aria-label="Hourly Forecast"></section>
+
+      <!-- Daily Forecast -->
+      <section id="daily-forecast" aria-label="5-Day Forecast"></section>
+
+      <!-- Details Grid (Wind, AQI, Additional Info) -->
+      <section id="details-grid" class="details-grid" aria-label="Weather Details"></section>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <p>
+      Weather Dashboard &copy; 2025 — Powered by
+      <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap API</a>
+      &nbsp;|&nbsp; Built with Vanilla JavaScript, Fetch API & async/await
+    </p>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- API Module (must load first) -->
+  <script src="js/api.js"></script>
+  <!-- Main Application Logic -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
